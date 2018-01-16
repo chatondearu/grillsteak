@@ -1,0 +1,17 @@
+@import 'variables.scss';
+
+@import url(https://fonts.googleapis.com/css?family=Lobster|Quicksand);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+}

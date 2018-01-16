@@ -1,0 +1,70 @@
+// variables
+$grillsteak-columns: 12 !default;
+$grillsteak-rows: 20 !default;
+$grillsteak-height: 50px !default;
+$gs-horizontal-padding: 20px !default;
+$gs-vertical-padding: 20px !default;
+$gs-animation-speed: .3s !default;
+
+// mixins
+
+
+// lets do it
+
+/* clearfix */
+.grill {
+  margin-right: -15px;
+  margin-left: -15px;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  :after,
+  :before {
+    box-sizing: border-box;
+  }
+}
+
+.chipo {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0;
+  min-width: 100% / $grillsteak-columns;
+
+  overflow: hidden;
+
+  @for $i from 1 through $grillsteak-columns {
+    &.chipo-width-#{$i} {
+      width: (100% / $grillsteak-columns) * $i;
+    }
+    &.chipo-min-width-#{$i} {
+      min-width: (100% / $grillsteak-columns) * $i;
+    }
+    &.chipo-max-width-#{$i} {
+      max-width: (100% / $grillsteak-columns) * $i;
+    }
+    &.chipo-x-#{$i} {
+      left: ((100% / $grillsteak-columns) * $i);
+    }
+  }
+
+  @for $i from 1 through $grillsteak-rows {
+    &.chipo-height-#{$i} {
+      height: $grillsteak-height * $i;
+    }
+    &.chipo-min-height-#{$i} {
+      min-height: $grillsteak-height * $i;
+    }
+    &.chipo-max-height-#{$i} {
+      max-height: $grillsteak-height * $i;
+    }
+  }
+
+  .js-grillsteak-resize,
+  .js-grillsteak-drag {
+    cursor: pointer;
+  }
+}
